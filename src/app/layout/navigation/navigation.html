@@ -1,0 +1,16 @@
+<nav class="navigation">
+  <ul class="nav-list">
+    @for (item of navigationItems; track item.path) {
+      <li class="nav-item">
+        <a 
+          [routerLink]="item.path" 
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: item.path === '/'}"
+          class="nav-link">
+          {{ item.label }}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>
+

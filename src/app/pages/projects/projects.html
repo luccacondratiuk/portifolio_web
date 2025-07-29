@@ -1,0 +1,117 @@
+<div class="projects-page">
+  <!-- Projects Hero -->
+  <section class="projects-hero">
+    <div class="container">
+      <h1>Meus Projetos</h1>
+      <p class="lead">
+        Uma coleção dos projetos que desenvolvi ao longo da minha carreira,
+        demonstrando diferentes tecnologias e abordagens.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter -->
+  <section class="projects-filter">
+    <div class="container">
+      <div class="filter-tabs">
+        <button class="filter-btn active" (click)="filterProjects('all')">Todos</button>
+        <button class="filter-btn" (click)="filterProjects('frontend')">Frontend</button>
+        <button class="filter-btn" (click)="filterProjects('fullstack')">Full Stack</button>
+        <button class="filter-btn" (click)="filterProjects('mobile')">Mobile</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects-grid-section">
+    <div class="container">
+      <div class="projects-grid">
+        @for (project of filteredProjects; track project.id) {
+          <div class="project-card" [attr.data-category]="project.category">
+            <div class="project-image">
+              <img [src]="project.image" [alt]="project.title" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a [href]="project.liveUrl" target="_blank" class="btn btn-sm btn-primary">Ver Demo</a>
+                  <a [href]="project.githubUrl" target="_blank" class="btn btn-sm btn-secondary">GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>{{ project.title }}</h3>
+              <p>{{ project.description }}</p>
+              <div class="project-tech">
+                @for (tech of project.technologies; track tech) {
+                  <span class="tech-tag">{{ tech }}</span>
+                }
+              </div>
+              <div class="project-meta">
+                <span class="project-date">{{ project.date }}</span>
+                <span class="project-status" [class]="'status-' + project.status">{{ project.status }}</span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub Stats -->
+  <section class="github-stats">
+    <div class="container">
+      <h2 class="section-title">Atividade no GitHub</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>150+</h3>
+          <p>Repositórios</p>
+        </div>
+        <div class="stat-card">
+          <h3>500+</h3>
+          <p>Commits este ano</p>
+        </div>
+        <div class="stat-card">
+          <h3>25+</h3>
+          <p>Projetos públicos</p>
+        </div>
+        <div class="stat-card">
+          <h3>10+</h3>
+          <p>Contribuições open source</p>
+        </div>
+      </div>
+      <div class="github-cta">
+        <a href="https://github.com/joaosilva" target="_blank" class="btn btn-outline">
+          Ver Perfil no GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies -->
+  <section class="technologies">
+    <div class="container">
+      <h2 class="section-title">Tecnologias Utilizadas</h2>
+      <div class="tech-cloud">
+        <span class="tech-item large">Flutter</span>
+        <span class="tech-item large">Dart</span>
+        <span class="tech-item small">Angular</span>
+        <span class="tech-item medium">Node.js</span>
+        <span class="tech-item large">TypeScript</span>
+        <span class="tech-item small">React</span>
+        <span class="tech-item medium">Express.js</span>
+        <span class="tech-item large">PostgreSQL</span>
+        <span class="tech-item small">MongoDB</span>
+        <span class="tech-item large">Docker</span>
+        <span class="tech-item large">Python</span>
+        <span class="tech-item large">NumPy</span>
+        <span class="tech-item large">SciPy</span>
+        <span class="tech-item large">Scikit-learn</span>
+        <span class="tech-item large">PyTorch</span>
+        <span class="tech-item large">TensorFlow</span>
+        <span class="tech-item large">C++</span>
+        <span class="tech-item large">Linux</span>
+        <span class="tech-item medium">AWS</span>
+      </div>
+    </div>
+  </section>
+</div>
+

@@ -1,0 +1,52 @@
+/* Header Styles */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--gray-200);
+  transition: all var(--transition-fast);
+
+  &.scrolled {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) 0;
+    min-height: 80px;
+
+    @media (max-width: 767px) {
+      padding: var(--space-3) 0;
+      min-height: 70px;
+    }
+  }
+
+  .logo {
+    h1 {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-bold);
+      background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0;
+      transition: all var(--transition-fast);
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 767px) {
+        font-size: var(--font-size-xl);
+      }
+    }
+  }
+}
+
