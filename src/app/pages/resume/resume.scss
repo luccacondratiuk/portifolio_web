@@ -1,0 +1,346 @@
+/* Resume Page Styles */
+
+.resume-page {
+  /* Hero Section */
+  .resume-hero {
+    background: linear-gradient(135deg, var(--primary-50), var(--accent-50));
+    padding: var(--space-16) 0;
+    text-align: center;
+
+    h1 {
+      font-size: var(--font-size-4xl);
+      font-weight: var(--font-weight-extrabold);
+      margin-bottom: var(--space-4);
+      background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .lead {
+      max-width: 700px;
+      margin: 0 auto var(--space-6);
+      font-size: var(--font-size-lg);
+      color: var(--gray-600);
+    }
+
+    .resume-actions {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+
+      @media (max-width: 640px) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  /* Personal Info */
+  .personal-info {
+    background-color: var(--white);
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-12);
+    }
+
+    .info-card {
+      background-color: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      padding: var(--space-6);
+      border-radius: var(--radius-xl);
+
+      h3 {
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: var(--space-4);
+      }
+
+      p {
+        color: var(--gray-600);
+        margin: 0;
+        line-height: var(--line-height-relaxed);
+      }
+
+      .info-list {
+        display: grid;
+        gap: var(--space-2);
+
+        .info-item {
+          font-size: var(--font-size-sm);
+          color: var(--gray-700);
+        }
+      }
+    }
+  }
+
+  /* Experience */
+  .experience-section {
+    background: linear-gradient(135deg, var(--gray-50), var(--primary-50));
+
+    .timeline {
+      position: relative;
+      border-left: 2px solid var(--primary-200);
+      margin-left: var(--space-4);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-left: var(--space-8);
+      margin-bottom: var(--space-12);
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -32px;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        background-color: var(--primary-500);
+        border-radius: var(--radius-full);
+      }
+
+      .timeline-header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        h3 {
+          font-size: var(--font-size-xl);
+          font-weight: var(--font-weight-bold);
+          margin-bottom: var(--space-2);
+        }
+
+        .company-info {
+          font-size: var(--font-size-sm);
+          color: var(--gray-500);
+        }
+      }
+
+      .timeline-body {
+        p {
+          color: var(--gray-600);
+          margin-bottom: var(--space-3);
+          line-height: var(--line-height-relaxed);
+        }
+
+        .achievements {
+          padding-left: var(--space-6);
+          margin-bottom: var(--space-3);
+
+          li {
+            margin-bottom: var(--space-2);
+          }
+        }
+
+        .technologies {
+          display: flex;
+          flex-wrap: wrap;
+          gap: var(--space-2);
+        }
+
+        .tech-tag {
+          background-color: var(--primary-100);
+          color: var(--primary-700);
+          padding: var(--space-1) var(--space-3);
+          border-radius: var(--radius-full);
+          font-size: var(--font-size-xs);
+          font-weight: var(--font-weight-medium);
+        }
+      }
+    }
+  }
+
+  /* Education */
+  .education-section {
+    background-color: var(--white);
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-8);
+    }
+
+    .education-card {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      background-color: var(--gray-50);
+
+      .education-header {
+        margin-bottom: var(--space-4);
+
+        h3 {
+          font-size: var(--font-size-lg);
+          font-weight: var(--font-weight-semibold);
+          margin: 0 0 var(--space-2);
+        }
+
+        .institution {
+          font-size: var(--font-size-sm);
+          color: var(--gray-700);
+        }
+
+        .period {
+          font-size: var(--font-size-xs);
+          color: var(--gray-500);
+        }
+      }
+
+      .education-body {
+        p {
+          margin-bottom: var(--space-3);
+          color: var(--gray-600);
+        }
+
+        ul {
+          padding-left: var(--space-6);
+
+          li {
+            margin-bottom: var(--space-2);
+          }
+        }
+      }
+    }
+  }
+
+  /* Certifications */
+  .certifications-section {
+    background: linear-gradient(135deg, var(--primary-50), var(--accent-50));
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-8);
+    }
+
+    .cert-card {
+      background-color: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      text-align: center;
+      transition: transform var(--transition-fast);
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      h3 {
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: var(--space-2);
+      }
+
+      .cert-info {
+        font-size: var(--font-size-sm);
+        color: var(--gray-600);
+        display: flex;
+        justify-content: center;
+        gap: var(--space-2);
+      }
+    }
+  }
+
+  /* Skills Summary */
+  .skills-summary {
+    background-color: var(--white);
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-12);
+    }
+
+    .skill-group {
+      h3 {
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: var(--space-3);
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+      }
+
+      .skill-tag {
+        padding: var(--space-1) var(--space-3);
+        border-radius: var(--radius-full);
+        font-size: var(--font-size-xs);
+        font-weight: var(--font-weight-medium);
+        color: var(--gray-700);
+        background-color: var(--gray-100);
+
+        &.expert {
+          background-color: var(--primary-600);
+          color: var(--white);
+        }
+
+        &.advanced {
+          background-color: var(--primary-400);
+          color: var(--white);
+        }
+
+        &.intermediate {
+          background-color: var(--primary-300);
+          color: var(--gray-800);
+        }
+      }
+    }
+  }
+
+  /* Languages */
+  .languages-section {
+    background: linear-gradient(135deg, var(--gray-50), var(--primary-50));
+
+    .languages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-8);
+    }
+
+    .language-item {
+      background-color: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      text-align: center;
+
+      h3 {
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: var(--space-4);
+      }
+
+      .language-level {
+        .level-indicator {
+          padding: var(--space-1) var(--space-3);
+          border-radius: var(--radius-full);
+          font-size: var(--font-size-xs);
+          font-weight: var(--font-weight-medium);
+          background-color: var(--primary-100);
+          color: var(--primary-700);
+
+          &.native {
+            background-color: var(--success-500);
+            color: var(--white);
+          }
+
+          &.advanced {
+            background-color: var(--primary-500);
+            color: var(--white);
+          }
+
+          &.intermediate {
+            background-color: var(--primary-300);
+            color: var(--gray-800);
+          }
+        }
+      }
+    }
+  }
+}
