@@ -6,11 +6,33 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import { LOCALE_ID } from '@angular/core';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+
+const supportedLangs = ['en', 'pt-br'];
+
+app.use('/:lang', (req, res, next) => {
+  const { lang } = req.params as { lang: string };
+  if (supportedLangs.includes(lang)) {
+    res.locals['lang'] = lang;
+    req.url = req.originalUrl.replace(/^\/[^/]+/, '');
+  } else {
+    res.locals['lang'] = 'pt-br';
+    req.url = req.originalUrl;
+  }
+  next();
+});
+
+app.use((req, res, next) => {
+  if (!res.locals['lang']) {
+    res.locals['lang'] = 'pt-br';
+  }
+  next();
+});
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -40,7 +62,9 @@ app.use(
  */
 app.use((req, res, next) => {
   angularApp
-    .handle(req)
+    .handle(req, {
+      providers: [{ provide: LOCALE_ID, useValue: res.locals['lang'] }],
+    })
     .then((response) =>
       response ? writeResponseToNodeResponse(response, res) : next(),
     )
