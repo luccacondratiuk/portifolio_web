@@ -9,8 +9,8 @@
           {{ 'HOME.HERO.DESCRIPTION' | translate }}
         </p>
         <div class="hero-actions">
-          <a routerLink="/projects" class="btn btn-primary">{{ 'HOME.HERO.BTN_PROJECTS' | translate }}</a>
-          <a routerLink="/contact" class="btn btn-secondary">{{ 'HOME.HERO.BTN_CONTACT' | translate }}</a>
+          <a [routerLink]="getLink('projects')" class="btn btn-primary">{{ 'HOME.HERO.BTN_PROJECTS' | translate }}</a>
+          <a [routerLink]="getLink('contact')" class="btn btn-secondary">{{ 'HOME.HERO.BTN_CONTACT' | translate }}</a>
         </div>
       </div>
       <div class="hero-image">
@@ -128,7 +128,7 @@
         </div>
       </div>
       <div class="projects-cta">
-        <a routerLink="/projects" class="btn btn-outline">{{ 'HOME.FEATURED.BTN_ALL' | translate }}</a>
+        <a [routerLink]="getLink('projects')" class="btn btn-outline">{{ 'HOME.FEATURED.BTN_ALL' | translate }}</a>
       </div>
     </div>
   </section>
@@ -139,7 +139,7 @@
       <div class="cta-content">
         <h2>{{ 'HOME.CTA.TITLE' | translate }}</h2>
         <p>{{ 'HOME.CTA.DESC' | translate }}</p>
-        <a routerLink="/contact" class="btn btn-primary">{{ 'HOME.CTA.BTN_CONTACT' | translate }}</a>
+        <a [routerLink]="getLink('contact')" class="btn btn-primary">{{ 'HOME.CTA.BTN_CONTACT' | translate }}</a>
       </div>
     </div>
   </section>

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -9,6 +9,8 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './navigation.scss'
 })
 export class NavigationComponent {
+  private router = inject(Router);
+
   navigationItems = [
     { path: '/', label: 'LAYOUT.NAV.HOME' },
     { path: '/about', label: 'LAYOUT.NAV.ABOUT' },
@@ -16,4 +18,13 @@ export class NavigationComponent {
     { path: '/resume', label: 'LAYOUT.NAV.RESUME' },
     { path: '/contact', label: 'LAYOUT.NAV.CONTACT' }
   ];
+
+  get currentLang(): string {
+    const lang = this.router.url.split('/')[1];
+    return lang || 'pt-br';
+  }
+
+  getPath(path: string) {
+    return ['/', this.currentLang, path].filter(Boolean);
+  }
 }

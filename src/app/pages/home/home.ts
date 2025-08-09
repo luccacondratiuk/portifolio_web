@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -9,5 +9,14 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './home.scss'
 })
 export class HomeComponent {
+  private router = inject(Router);
 
+  get currentLang(): string {
+    const lang = this.router.url.split('/')[1];
+    return lang || 'pt-br';
+  }
+
+  getLink(path: string) {
+    return ['/', this.currentLang, path].filter(Boolean);
+  }
 }

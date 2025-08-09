@@ -2,10 +2,10 @@
   <ul class="nav-list">
     @for (item of navigationItems; track item.path) {
       <li class="nav-item">
-        <a 
-          [routerLink]="item.path" 
+        <a
+          [routerLink]="getPath(item.path)"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: item.path === '/'}"
+          [routerLinkActiveOptions]="{exact: item.path === ''}"
           class="nav-link">
           {{ item.label | translate }}
         </a>
