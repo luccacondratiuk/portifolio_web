@@ -7,7 +7,7 @@
           routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: item.path === '/'}"
           class="nav-link">
-          {{ item.label }}
+          {{ item.label | translate }}
         </a>
       </li>
     }
