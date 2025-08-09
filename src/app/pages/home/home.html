@@ -10,8 +10,8 @@
           Apaixonado por criar soluções inovadoras e escaláveis.
         </p>
         <div class="hero-actions">
-          <a routerLink="/projects" class="btn btn-primary">Ver Projetos</a>
-          <a routerLink="/contact" class="btn btn-secondary">Entre em Contato</a>
+          <a [routerLink]="getLink('projects')" class="btn btn-primary">Ver Projetos</a>
+          <a [routerLink]="getLink('contact')" class="btn btn-secondary">Entre em Contato</a>
         </div>
       </div>
       <div class="hero-image">
@@ -129,7 +129,7 @@
         </div>
       </div>
       <div class="projects-cta">
-        <a routerLink="/projects" class="btn btn-outline">Ver Todos os Projetos</a>
+        <a [routerLink]="getLink('projects')" class="btn btn-outline">Ver Todos os Projetos</a>
       </div>
     </div>
   </section>
@@ -140,7 +140,7 @@
       <div class="cta-content">
         <h2>Vamos trabalhar juntos?</h2>
         <p>Estou sempre aberto a novos desafios e oportunidades interessantes.</p>
-        <a routerLink="/contact" class="btn btn-primary">Entre em Contato</a>
+        <a [routerLink]="getLink('contact')" class="btn btn-primary">Entre em Contato</a>
       </div>
     </div>
   </section>
