@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navigation',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, TranslateModule],
   templateUrl: './navigation.html',
   styleUrl: './navigation.scss'
 })
@@ -11,11 +12,11 @@ export class NavigationComponent {
   private router = inject(Router);
 
   navigationItems = [
-    { path: '', label: 'Home' },
-    { path: 'about', label: 'Sobre' },
-    { path: 'projects', label: 'Projetos' },
-    { path: 'resume', label: 'Currículo' },
-    { path: 'contact', label: 'Contato' }
+    { path: '/', label: 'LAYOUT.NAV.HOME' },
+    { path: '/about', label: 'LAYOUT.NAV.ABOUT' },
+    { path: '/projects', label: 'LAYOUT.NAV.PROJECTS' },
+    { path: '/resume', label: 'LAYOUT.NAV.RESUME' },
+    { path: '/contact', label: 'LAYOUT.NAV.CONTACT' }
   ];
 
   get currentLang(): string {

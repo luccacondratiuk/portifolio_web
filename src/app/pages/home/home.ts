@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslateModule],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
