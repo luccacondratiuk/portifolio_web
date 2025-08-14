@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class I18nService {
-  private readonly _language$ = new BehaviorSubject<string>('pt-br');
+  private readonly _language$ = new BehaviorSubject<string>('pt-BR');
 
   get currentLang(): string {
     return this._language$.value;

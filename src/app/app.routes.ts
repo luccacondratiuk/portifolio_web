@@ -40,10 +40,10 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'pt-br'
+    redirectTo: 'pt-BR'
   },
   {
     path: '**',
-    redirectTo: 'pt-br'
+    redirectTo: 'pt-BR'
   }
 ];

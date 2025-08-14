@@ -10,7 +10,7 @@ import { I18nService } from '../../i18n/i18n.service';
   styleUrl: './language-switcher.scss'
 })
 export class LanguageSwitcherComponent {
-  currentLang: string;
+  currentLang: string = 'pt-BR';
 
   constructor(private i18nService: I18nService, private router: Router) {
     this.currentLang = this.i18nService.currentLang;
@@ -22,7 +22,7 @@ export class LanguageSwitcherComponent {
     }
     this.i18nService.setLanguage(lang);
     const currentUrl = this.router.url;
-    const pathWithoutLang = currentUrl.replace(/^\/(en|pt-br)/, '');
+    const pathWithoutLang = currentUrl.replace(/^\/(en|pt-BR)/, '');
     this.router.navigateByUrl(`/${lang}${pathWithoutLang}`);
     this.currentLang = lang;
   }

@@ -13,7 +13,7 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
-const supportedLangs = ['en', 'pt-br'];
+const supportedLangs = ['en', 'pt-BR'];
 
 app.use('/:lang', (req, res, next) => {
   const { lang } = req.params as { lang: string };
@@ -21,7 +21,7 @@ app.use('/:lang', (req, res, next) => {
     res.locals['lang'] = lang;
     req.url = req.originalUrl.replace(/^\/[^/]+/, '');
   } else {
-    res.locals['lang'] = 'pt-br';
+    res.locals['lang'] = 'pt-BR';
     req.url = req.originalUrl;
   }
   next();
@@ -29,7 +29,7 @@ app.use('/:lang', (req, res, next) => {
 
 app.use((req, res, next) => {
   if (!res.locals['lang']) {
-    res.locals['lang'] = 'pt-br';
+    res.locals['lang'] = 'pt-BR';
   }
   next();
 });
