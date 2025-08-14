@@ -18,7 +18,7 @@ interface Project {
   selector: 'app-projects',
   imports: [CommonModule],
   templateUrl: './projects.html',
-  styleUrl: './projects.scss'
+  styleUrls: ['./projects.scss']
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [
