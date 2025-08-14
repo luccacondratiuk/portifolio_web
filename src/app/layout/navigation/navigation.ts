@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navigation',
+  standalone: true,
   imports: [RouterLink, RouterLinkActive, TranslateModule],
   templateUrl: './navigation.html',
   styleUrl: './navigation.scss'

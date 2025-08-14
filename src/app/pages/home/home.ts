@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [RouterLink, TranslateModule],
   templateUrl: './home.html',
   styleUrl: './home.scss'

@@ -5,6 +5,7 @@ import { I18nService } from '../../i18n/i18n.service';
 
 @Component({
   selector: 'app-language-switcher',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './language-switcher.html',
   styleUrl: './language-switcher.scss'
