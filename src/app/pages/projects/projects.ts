@@ -105,15 +105,10 @@ export class ProjectsComponent implements OnInit {
 
   filterProjects(category: string) {
     this.currentFilter = category;
-    
-    if (category === 'all') {
-      this.filteredProjects = this.projects;
-    } else {
-      this.filteredProjects = this.projects.filter(project => project.category === category);
-    }
 
-    // Update active filter button
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelector(`[onclick="filterProjects('${category}')"]`)?.classList.add('active');
+    this.filteredProjects =
+      category === 'all'
+        ? this.projects
+        : this.projects.filter(project => project.category === category);
   }
 }

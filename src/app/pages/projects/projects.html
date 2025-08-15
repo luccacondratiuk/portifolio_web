@@ -14,10 +14,10 @@
   <section class="projects-filter">
     <div class="container">
       <div class="filter-tabs">
-        <button class="filter-btn active" (click)="filterProjects('all')">Todos</button>
-        <button class="filter-btn" (click)="filterProjects('frontend')">Frontend</button>
-        <button class="filter-btn" (click)="filterProjects('fullstack')">Full Stack</button>
-        <button class="filter-btn" (click)="filterProjects('mobile')">Mobile</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'all'" (click)="filterProjects('all')">Todos</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'frontend'" (click)="filterProjects('frontend')">Frontend</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'fullstack'" (click)="filterProjects('fullstack')">Full Stack</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'mobile'" (click)="filterProjects('mobile')">Mobile</button>
       </div>
     </div>
   </section>
