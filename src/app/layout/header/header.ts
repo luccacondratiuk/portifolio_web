@@ -5,6 +5,7 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
 
 @Component({
   selector: 'app-header',
+  standalone: true,
   imports: [NavigationComponent, TranslateModule, LanguageSwitcherComponent],
   templateUrl: './header.html',
   styleUrls: ['./header.scss']
