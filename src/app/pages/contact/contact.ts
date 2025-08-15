@@ -14,7 +14,7 @@ interface ContactForm {
   selector: 'app-contact',
   imports: [FormsModule, CommonModule],
   templateUrl: './contact.html',
-  styleUrl: './contact.scss'
+  styleUrls: ['./contact.scss']
 })
 export class ContactComponent {
   formData: ContactForm = {

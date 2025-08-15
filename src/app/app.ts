@@ -7,7 +7,7 @@ import { FooterComponent } from './layout/footer/footer';
   selector: 'app-root',
   imports: [RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']
 })
 export class App {
   protected readonly title = signal('Landing Page Pessoal');

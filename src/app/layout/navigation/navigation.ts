@@ -6,7 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
   selector: 'app-navigation',
   imports: [RouterLink, RouterLinkActive, TranslateModule],
   templateUrl: './navigation.html',
-  styleUrl: './navigation.scss'
+  styleUrls: ['./navigation.scss']
 })
 export class NavigationComponent {
   private router = inject(Router);

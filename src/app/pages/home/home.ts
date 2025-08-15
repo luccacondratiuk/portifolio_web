@@ -6,7 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
   selector: 'app-home',
   imports: [RouterLink, TranslateModule],
   templateUrl: './home.html',
-  styleUrl: './home.scss'
+  styleUrls: ['./home.scss']
 })
 export class HomeComponent {
   private router = inject(Router);

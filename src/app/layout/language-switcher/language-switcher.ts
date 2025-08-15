@@ -7,7 +7,7 @@ import { I18nService } from '../../i18n/i18n.service';
   selector: 'app-language-switcher',
   imports: [CommonModule],
   templateUrl: './language-switcher.html',
-  styleUrl: './language-switcher.scss'
+  styleUrls: ['./language-switcher.scss']
 })
 export class LanguageSwitcherComponent {
   currentLang: string = 'pt-BR';
