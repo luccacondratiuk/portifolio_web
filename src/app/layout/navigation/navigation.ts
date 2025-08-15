@@ -21,7 +21,7 @@ export class NavigationComponent {
 
   get currentLang(): string {
     const lang = this.router.url.split('/')[1];
-    return lang || 'pt-br';
+    return lang || 'pt-BR';
   }
 
   getPath(path: string) {

@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 
-const SUPPORTED_LANGS = ['en', 'pt-br'];
+const SUPPORTED_LANGS = ['en', 'pt-BR'];
 
 export const LocaleGuard: CanActivateFn = (route) => {
   const lang = route.paramMap.get('lang') ?? '';
@@ -11,6 +11,6 @@ export const LocaleGuard: CanActivateFn = (route) => {
     return true;
   }
 
-  return router.parseUrl('/pt-br');
+  return router.parseUrl('/pt-BR');
 };
 
