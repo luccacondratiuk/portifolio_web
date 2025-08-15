@@ -1,23 +1,11 @@
-import { Component, inject } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, TranslateModule],
+  imports: [RouterLink],
   templateUrl: './home.html',
   styleUrls: ['./home.scss']
 })
-export class HomeComponent {
-  private router = inject(Router);
-
-  get currentLang(): string {
-    const lang = this.router.url.split('/')[1];
-    return lang || 'pt-BR';
-  }
-
-  getLink(path: string) {
-    return ['/', this.currentLang, path].filter(Boolean);
-  }
-}
+export class HomeComponent {}
