@@ -3,19 +3,19 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1 class="hero-title" [innerHTML]="'HOME.HERO.TITLE' | translate"></h1>
-        <h2 class="hero-subtitle">{{ 'HOME.HERO.SUBTITLE' | translate }}</h2>
-        <p class="hero-description">
-          {{ 'HOME.HERO.DESCRIPTION' | translate }}
+        <h1 class="hero-title" i18n="@@homeHeroTitle">Olá, eu sou <span class='highlight'>Jean Lucca</span></h1>
+        <h2 class="hero-subtitle" i18n="@@homeHeroSubtitle">Tech Lead & Arquiteto de Software & dev FullStack</h2>
+        <p class="hero-description" i18n="@@homeHeroDescription">
+          Cientista de Dados, especialista em Python e líder técnico. Apaixonado por criar soluções inovadoras e escaláveis.
         </p>
         <div class="hero-actions">
-          <a [routerLink]="getLink('projects')" class="btn btn-primary">{{ 'HOME.HERO.BTN_PROJECTS' | translate }}</a>
-          <a [routerLink]="getLink('contact')" class="btn btn-secondary">{{ 'HOME.HERO.BTN_CONTACT' | translate }}</a>
+          <a routerLink="/projects" class="btn btn-primary" i18n="@@homeHeroBtnProjects">Ver Projetos</a>
+          <a routerLink="/contact" class="btn btn-secondary" i18n="@@homeHeroBtnContact">Entre em Contato</a>
         </div>
       </div>
       <div class="hero-image">
         <div class="profile-placeholder">
-          <span>{{ 'HOME.HERO.PROFILE_PLACEHOLDER' | translate }}</span>
+          <span i18n="@@homeHeroProfilePlaceholder">Foto do Perfil</span>
         </div>
       </div>
     </div>
@@ -24,10 +24,10 @@
   <!-- Skills Section -->
   <section class="skills">
     <div class="container">
-      <h2 class="section-title">{{ 'HOME.SKILLS.TITLE' | translate }}</h2>
+      <h2 class="section-title" i18n="@@homeSkillsTitle">Principais Tecnologias</h2>
       <div class="skills-grid">
         <div class="skill-card">
-          <h3>{{ 'HOME.SKILLS.FRONTEND' | translate }}</h3>
+          <h3 i18n="@@homeSkillsFrontend">Frontend</h3>
           <ul>
             <li>Angular 17+</li>
             <li>TypeScript</li>
@@ -35,7 +35,7 @@
           </ul>
         </div>
         <div class="skill-card">
-          <h3>{{ 'HOME.SKILLS.BACKEND' | translate }}</h3>
+          <h3 i18n="@@homeSkillsBackend">Backend</h3>
           <ul>
             <li>Node.js</li>
             <li>Express.js</li>
@@ -47,7 +47,7 @@
           </ul>
         </div>
         <div class="skill-card">
-          <h3>{{ 'HOME.SKILLS.MOBILE' | translate }}</h3>
+          <h3 i18n="@@homeSkillsMobile">Mobile</h3>
           <ul>
             <li>Flutter</li>
             <li>Dart</li>
@@ -56,7 +56,7 @@
           </ul>
         </div>
         <div class="skill-card">
-          <h3>{{ 'HOME.SKILLS.DEVOPS' | translate }}</h3>
+          <h3 i18n="@@homeSkillsDevops">DevOps</h3>
           <ul>
             <li>Docker</li>
             <li>AWS</li>
@@ -65,7 +65,7 @@
           </ul>
         </div>
         <div class="skill-card">
-          <h3>{{ 'HOME.SKILLS.ML' | translate }}</h3>
+          <h3 i18n="@@homeSkillsMl">Machine Learning</h3>
           <ul>
             <li>Python</li>
             <li>Pandas</li>
@@ -82,15 +82,15 @@
   <!-- Featured Projects -->
   <section class="featured-projects">
     <div class="container">
-      <h2 class="section-title">{{ 'HOME.FEATURED.TITLE' | translate }}</h2>
+      <h2 class="section-title" i18n="@@homeFeaturedTitle">Projetos em Destaque</h2>
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-image">
             <span>Imagem do Projeto 1</span>
           </div>
           <div class="project-content">
-            <h3>{{ 'HOME.FEATURED.PROJECT1.TITLE' | translate }}</h3>
-            <p>{{ 'HOME.FEATURED.PROJECT1.DESC' | translate }}</p>
+            <h3 i18n="@@homeFeaturedProject1Title">E-commerce Platform</h3>
+            <p i18n="@@homeFeaturedProject1Desc">Plataforma completa de e-commerce com Angular e Node.js</p>
             <div class="project-tech">
               <span class="tech-tag">Angular</span>
               <span class="tech-tag">Node.js</span>
@@ -103,8 +103,8 @@
             <span>Imagem do Projeto 2</span>
           </div>
           <div class="project-content">
-            <h3>{{ 'HOME.FEATURED.PROJECT2.TITLE' | translate }}</h3>
-            <p>{{ 'HOME.FEATURED.PROJECT2.DESC' | translate }}</p>
+            <h3 i18n="@@homeFeaturedProject2Title">Task Management App</h3>
+            <p i18n="@@homeFeaturedProject2Desc">Aplicativo de gerenciamento de tarefas com real-time</p>
             <div class="project-tech">
               <span class="tech-tag">Angular</span>
               <span class="tech-tag">Socket.io</span>
@@ -117,8 +117,8 @@
             <span>Imagem do Projeto 3</span>
           </div>
           <div class="project-content">
-            <h3>{{ 'HOME.FEATURED.PROJECT3.TITLE' | translate }}</h3>
-            <p>{{ 'HOME.FEATURED.PROJECT3.DESC' | translate }}</p>
+            <h3 i18n="@@homeFeaturedProject3Title">Analytics Dashboard</h3>
+            <p i18n="@@homeFeaturedProject3Desc">Dashboard de analytics com visualizações interativas</p>
             <div class="project-tech">
               <span class="tech-tag">Angular</span>
               <span class="tech-tag">D3.js</span>
@@ -128,7 +128,7 @@
         </div>
       </div>
       <div class="projects-cta">
-        <a [routerLink]="getLink('projects')" class="btn btn-outline">{{ 'HOME.FEATURED.BTN_ALL' | translate }}</a>
+        <a routerLink="/projects" class="btn btn-outline" i18n="@@homeFeaturedBtnAll">Ver Todos os Projetos</a>
       </div>
     </div>
   </section>
@@ -137,9 +137,9 @@
   <section class="cta">
     <div class="container">
       <div class="cta-content">
-        <h2>{{ 'HOME.CTA.TITLE' | translate }}</h2>
-        <p>{{ 'HOME.CTA.DESC' | translate }}</p>
-        <a [routerLink]="getLink('contact')" class="btn btn-primary">{{ 'HOME.CTA.BTN_CONTACT' | translate }}</a>
+        <h2 i18n="@@homeCtaTitle">Vamos trabalhar juntos?</h2>
+        <p i18n="@@homeCtaDesc">Estou sempre aberto a novos desafios e oportunidades interessantes.</p>
+        <a routerLink="/contact" class="btn btn-primary" i18n="@@homeCtaBtnContact">Entre em Contato</a>
       </div>
     </div>
   </section>

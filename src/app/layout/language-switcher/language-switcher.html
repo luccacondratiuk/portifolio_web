@@ -1,4 +1,6 @@
 <div class="language-switcher">
-  <button type="button" (click)="switchLanguage('pt-BR')" [class.active]="currentLang === 'pt-BR'">pt-BR</button>
-  <button type="button" (click)="switchLanguage('en')" [class.active]="currentLang === 'en'">en</button>
+  <select [value]="currentLang" (change)="switchLanguage($event.target.value)">
+    <option value="pt-BR">Português</option>
+    <option value="en">English</option>
+  </select>
 </div>
