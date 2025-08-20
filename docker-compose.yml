@@ -8,6 +8,8 @@ services:
       - PORT=4000
     expose:
       - '4000'
+    ports:
+      - '4000:4000'
     networks:
       - dokploy-network
   # nginx:
