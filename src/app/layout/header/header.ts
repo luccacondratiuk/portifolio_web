@@ -6,6 +6,7 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
   selector: 'app-header',
   standalone: true,
   imports: [NavigationComponent, LanguageSwitcherComponent],
+  //imports: [NavigationComponent],
   templateUrl: './header.html',
   styleUrls: ['./header.scss']
 })
