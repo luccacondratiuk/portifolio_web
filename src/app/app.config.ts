@@ -4,6 +4,8 @@ import { provideHttpClient } from '@angular/common/http';
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { PROJECT_REPOSITORY } from './domain/projects/project.repository';
+import { InMemoryProjectRepository } from './infrastructure/projects/in-memory-project.repository';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,6 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     provideHttpClient(),
-    
+    { provide: PROJECT_REPOSITORY, useClass: InMemoryProjectRepository },
   ]
 };
